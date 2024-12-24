@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="sectionLabel">
+		<h2>{{ section.settings.section_heading }}</h2>
+		<div class="row">
+          {% for products in collections.all.products %}
+			<div class="col-md-4">
+				<div class="productImages">
+                  <img src="{{ products.images.first | img_url: "master" }}">
+					<span class="modelOpener" data-handle="{{ products.handle }}">+</span>
+				</div>
+			</div>
+            {% endfor %}
+		</div>
+	</div>
+  <div class="modalWrapper">
+  	<div class="container">
+      <spa class="closeModal"></spa>
+  		<div class="row">
+  			<div class="col-md-6">
+  				<img class="imageSrc" src="">
+  			</div>
+  			<div class="col-md-6">
+  				<div class="productContent">
+  					<h4>Orange Wide Leg</h4>
+  					<span>980,00€</span>
+  					<p>This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="vairantsColor">
+  			<h5>Color</h5>
+          <div class="colorsVairant"></div>
+  		</div>
+  		<div class="sizeVariants">
+  			<h5>Size</h5>
+          <div class="variantSzir"></div>
+  		</div>
+  		<a href="#">Add to cart <span></span></a>
+  	</div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Catalog HomePage",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Section Label"
+      }
+    ]
+  }
+{% endschema %}
