@@ -1,0 +1,60 @@
+<header>
+	<div class="container">
+		<div class="rowContainer">
+			<div class="logoWrapper">
+				<a href="/">
+					<img src="{{ section.settings.logo | img_url: "master" }}">
+				</a>
+			</div>
+			<div class="contentWrapper">
+				<p>{{ section.settings.bar_content }}</p>
+			</div>
+			<div class="buttonWrapper">
+				<a class="menuOpener" href="#">
+					<span></span>
+				</a>
+			</div>
+			<div class="buttonWrappers">
+				<a href="{{ section.settings.menu_button.url }}">
+                  Choose Gift
+					<span></span>
+				</a>
+			</div>
+		</div>
+	</div>
+  <div class="mennuMobile">
+    <div class="rowContainer">
+			<div class="contentWrapper">
+				<p>{{ section.settings.bar_content }}</p>
+			</div>
+			<div class="buttonWrappers">
+				<a href="{{ section.settings.menu_button.url }}">
+                  Choose Gift
+					<span></span>
+				</a>
+			</div>
+		</div>
+  </div>
+</header>
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Site Logo"
+    },
+    {
+      "type": "richtext",
+      "label": "Announcement Bar",
+      "id": "bar_content"
+    },
+    {
+      "type": "url",
+      "id": "menu_button",
+      "label": "Menu Button"
+    }
+  ]
+}
+{% endschema %}

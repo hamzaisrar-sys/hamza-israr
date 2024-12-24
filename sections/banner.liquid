@@ -1,0 +1,45 @@
+<div class="bannerWrapper" style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');">
+	<div class="container">
+		<div class="containerContent">
+			<h1>{{ section.settings.heading }}</h1>
+            <div class="desktopConent">{{ section.settings.content }}</div>
+          <div class="mobileContent">{{ section.settings.content_modile }}</div>
+			<div class="shopBannerButton">
+              <a href="{{ section.settings.banner_url.url }}">Shop Now</a>
+            </div>
+		</div>
+	</div>
+</div>
+<div class="bannerContentAfter">{{ section.settings.content_atfer }}</div>
+{% schema %}
+  {
+    "name": "Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      }, {
+        "type": "text",
+        "id": "heading",
+        "label": "Banner Heading"
+      }, {
+        "type": "richtext",
+        "id": "content",
+        "label": "Banner Content"
+      },{
+        "type": "richtext",
+        "id": "content_atfer",
+        "label": "Content After Banner"
+      },{
+        "type": "richtext",
+        "id": "content_modile",
+        "label": "Banner Content for Mobile"
+      }, {
+        "type": "url",
+        "id": "banner_url",
+        "label": "Banner URL"
+      }
+    ]
+  }
+{% endschema %}
